@@ -1,0 +1,44 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=general-sans@200,300,400,500,600,700,800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #F0B90B; /* Royal Yellow */
+  --color-royal-yellow: #F0B90B;
+  --color-bg-black: #000000;
+  --color-bg-gray: #121212;
+  --color-text-gray: #9CA3AF;
+  
+  --font-sans: "General Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Clash Display", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --animate-marquee: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@layer base {
+  html, body {
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+}
+
+@keyframes initialSlideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
