@@ -33,9 +33,9 @@ const Preloader = () => {
         clearInterval(typeInterval);
         setTimeout(() => {
           setPhase(1); // Move to flashing languages
-        }, 250); // Pause for 250ms before switching (750 + 250 = 1000ms)
+        }, 150); // Pause for 250ms before switching (750 + 250 = 1000ms)
       }
-    }, 150); // 150ms per letter
+    }, 50); // 150ms per letter
 
     return () => clearInterval(typeInterval);
   }, [phase]);
@@ -68,7 +68,7 @@ const Preloader = () => {
         phase === 2 ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
-      <div className="text-primary text-2xl md:text-4xl font-display font-semibold tracking-normal drop-shadow-2xl">
+      <div className="text-primary text-2xl md:text-3xl font-display font-semibold tracking-normal drop-shadow-2xl">
         {displayedText}
       </div>
     </div>
