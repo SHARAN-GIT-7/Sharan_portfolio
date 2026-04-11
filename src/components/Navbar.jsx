@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import MagneticButton from './MagneticButton';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -28,9 +29,12 @@ const Navbar = () => {
         
         {/* Right: Smaller Get in touch button */}
         <div className="flex items-center">
-          <a href="#contact" className="px-5 py-2 text-xs md:text-sm rounded-full bg-transparent hover:bg-primary hover:text-black border border-white/40 hover:border-primary hover:shadow-[0_0_15px_rgba(240,185,11,0.6)] transition-all duration-300 uppercase tracking-wider font-bold">
+          <MagneticButton 
+            href="#contact" 
+            className="px-5 py-2 text-xs md:text-sm rounded-full bg-transparent border border-white/40 hover:border-primary hover:shadow-[0_0_15px_rgba(240,185,11,0.6)] uppercase tracking-wider font-bold"
+          >
             Get in touch
-          </a>
+          </MagneticButton>
         </div>
       </div>
     </nav>

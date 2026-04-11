@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IoMdDownload } from "react-icons/io";
+import MagneticButton from './MagneticButton';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -62,14 +63,16 @@ const Contact = () => {
           </p>
           
           <div className="mt-8">
-            <a 
+            <MagneticButton 
               href="src\assets\Sharanraj.T RESUME.pdf" 
               download 
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-primary transition-all duration-300 transform hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full border  transition-all duration-300 transform hover:scale-105 active:scale-95"
             >
-              <span>Download My Resume</span>
-              <IoMdDownload size={20} />
-            </a>
+              <div className="flex items-center gap-3">
+                <span>Download My Resume</span>
+                <IoMdDownload size={20} />
+              </div>
+            </MagneticButton>
           </div>
         </div>
 
@@ -137,13 +140,13 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            <button 
+            <MagneticButton 
               type="submit"
-              className="w-full py-5 bg-primary text-black font-bold uppercase tracking-widest rounded-xl hover:bg-yellow-300 transition-all active:scale-[0.98] disabled:opacity-50"
+              className="w-full py-5 bg-primary text-black font-bold uppercase tracking-widest rounded-xl disabled:opacity-50"
               disabled={status === 'Sending...'}
             >
               {status || 'Send Message'}
-            </button>
+            </MagneticButton>
           </form>
         </div>
       </div>
